@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ethereum Fraud Detection</title>
+  
+</head>
+
+<body style="background: #66BFBF;">
+ <div class="login">
+	<h1 style="color: #EAF6F6;">Ethereum Fraud Detection</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <label>Enter Avg min between sent transactions: </label>
+    	<input type="text" name="Avg min between sent transactions" placeholder="Avg min between sent transactions" required="required" /><br><br>
+        <label>Enter Avg min between received transactions: </label>
+        <input type="text" name="Avg min between received transactions" placeholder="Avg min between received transactions" required="required" /><br><br>
+        <label>Enter Sent Transactions: </label>
+    	<input type="text" name="Sent Transactions" placeholder="Sent Transactions" required="required" /><br><br>
+        <label>Enter Received Transactions: </label>
+        <input type="text" name="Received Transactions" placeholder="Received Transactions" required="required" /><br><br>
+        <label>Enter Number of Created Contracts: </label>
+    	<input type="text" name="Number of Created Contracts" placeholder="Number of Created Contracts" required="required" /><br><br>
+        <label>Enter Minimum value received: </label>
+    	<input type="text" name="Minimum value received" placeholder="Minimum value received" required="required" /><br><br>
+        <label>Enter Maximum value received: </label>
+    	<input type="text" name="Maximum value received" placeholder="Maximum value received" required="required" /><br><br>
+        <label>Enter Minimum value sent: </label>
+    	<input type="text" name="Minimum value sent" placeholder="Minimum value sent" required="required" /><br><br>
+        <label>Enter Maximum value sent: </label>
+    	<input type="text" name="Maximum value sent" placeholder="Maximum value sent" required="required" /><br><br>
+        <label>Enter Total Transactions: </label>
+    	<input type="text" name="Total Transactions" placeholder="Total Transactions" required="required" /><br><br>
+        <label>Enter Total Ether Sent: </label>
+    	<input type="text" name="Total Ether Sent" placeholder="Total Ether Sent" required="required" /><br><br>
+        <label>Enter Total Ether Received: </label>
+    	<input type="text" name="Total Ether Received" placeholder="Total Ether Received" required="required" /><br><br>
+        <label>Enter Total ERC20 Transactions: </label>
+    	<input type="text" name="Total ERC20 Transactions" placeholder="Total ERC20 Transactions" required="required" /><br><br>
+        <label>Enter ERC20 unique sent token name: </label>
+    	<input type="text" name="ERC20 unique sent token name" placeholder="ERC20 unique sent token name" required="required" /><br><br>
+        <label>Enter ERC20 unique received token name: </label>
+    	<input type="text" name="ERC20 unique received token name" placeholder="ERC20 unique received token name" required="required" /><br><br>
+        <label>Press the Predict button for "Predicting the Transaction is Fraud or NOT!"</label>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form><br>
+   <h2 style="color: #EAF6F6;">
+   {{ prediction_text }} </h2>
+
+ </div>
+
+
+</body>
+</html>
